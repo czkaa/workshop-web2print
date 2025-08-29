@@ -1,0 +1,106 @@
+<!-- Meta Information für den Browser -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>Wolken</title> <!-- Titel der Website (erscheint in der Tableiste) -->
+
+    <!-- verweist auf ein CSS Styleheet -->
+    <link href="./css/style.css" rel="stylesheet">
+
+</head>
+
+<!-- Sichtbare Inhalte der Website -->
+<body>
+
+    <header id="top">
+        <!-- Hauptüberschrift/ Titel -->
+        <h1>Wolken</h1>
+
+
+        <!-- Navigation -->
+        <nav>
+            <ul><!-- Listen Container -->
+                <li><!-- Listen Element -->
+                    <a href="#intro">Intro-Section</a> <!-- Hyperlink zu der section #intro -->
+                </li>
+                <li><a href="#video-section">Video-Section</a></li>
+                <li><a href="#audio-section">Audio-Section</a></li>
+                <li><a href="#bilder-section">Bilder-Section</a></li>
+
+            </ul>
+        </nav>
+    </header>
+   
+
+    <main>
+        <!-- Unterteilung d. Inhalte in Sektionen/Kapitel, zwischen denen wir dann hin und her springen können -->
+        <section id="intro">
+            <!-- Ein Text-Absatz -->
+            <p>Eine Wolke ist eine Ansammlung von sehr feinen Wassertröpfchen (Nebel) oder Eiskristallen in der Atmosphäre der Erde. Wolken sind deshalb sichtbar, weil Licht aufgrund der Mie-Streuung gestreut wird, wodurch der Tyndall-Effekt auftritt und die eigentlich farblosen Tröpfchen sichtbar werden. Sie entstehen, driften und vergehen in den Strömungen der irdischen Atmosphäre mit deren in verschiedener Höhe oft unterschiedlichen Stärke und Richtung (Windscherung).</p>
+        </section>
+        
+        <section id="video-section">
+            <!-- Zwischenüberschrift -->
+            <h2>Video</h2>
+
+            <!-- Video aus den lokalen Dateien -->
+            <video controls src="./assets/video/cloud-footage.mp4"></video>
+            <p class="subtitle">
+                <!-- Untertitel -->
+                Cloud and sun footage</a>
+            </p>
+        </section>
+        
+        <section id="audio-section">
+
+            <!-- Container, um den Content auf der linken Seite zu gruppieren -->
+            <div>
+                <!-- Zwischenüberschrift -->
+                <h2>Audio</h2>
+
+                <p>
+                    Als Wind (althochdeutsch wint; wie gleichbedeutend lateinisch ventus zu indogermanisch ue ‚wehen, blasen‘) wird in der Meteorologie eine gerichtete, stärkere Luft­bewegung in der Erdatmosphäre bezeichnet. Die Astronomie kennt darüber hinaus Winde, die auf Planeten und Monden mit einer hinreichend dichten Atmosphäre wehen.
+                </p>
+
+                <!--Audio aus den lokalen Dateien -->
+                <audio controls src="./assets/audio/windy-night.mp3"></audio>
+                
+                <!-- Untertitel mit internem Anchor-Link -->
+                <p class="subtitle">So klingt Wind <a href="#footnote-1">(1)</a></p>
+
+            </div>
+
+            <aside>
+                <!-- Liste -->
+                <ul class="footnotes">
+                    <!-- Scroll-Ziel des Anchor-Links -->
+                    <li id="footnote-1">(1) Den Sound habe ich <a target="_blank" href="https://pixabay.com/sound-effects/search/windy/">hier</a> gefunden</li>
+                </ul>
+            </aside>
+        </section>
+        
+        <section id="bilder-section">
+            <!-- Zwischenüberschrift -->
+            <h2>Bilder</h2>
+
+            <!-- Bild aus lokalen Dateien -->
+            <img alt="Eine Wolke vor blauem Hintergrund" src="./assets/img/cloud.jpg">
+
+            <!-- Untertitel -->
+            <p class="subtitle">Eine Cirrus-Wolke</p>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Anchor-Link nach oben -->
+        <a id="link-to-top" href="./#top">(Back to Top)</a>
+    </footer>
+
+    <!-- verweist auf eine Javascript-Datei -->
+    <script src="js/script.js" type="text/javascript"></script>
+
+</body>
+</html>

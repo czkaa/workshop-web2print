@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Einführung</title>
+
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="introductions.css">
+
+
+</head>
+
+<body>
+
+    <nav>
+        <ul>    
+            <li><a href="#was-ist-javascript">Was ist JavaScript?</a></li>
+            <li><a href="#logging">Logging</a></li>
+            <li><a href="#html-elemente">HTML-Elemente</a></li>
+            <li><a href="#html-manipulation">HTML-Manipulation</a></li>
+            <li><a href="#event-listeners">Event-Listeners</a></li>
+            <li><a href="#resources">Ressourcen</a></li>
+        </ul>
+    </nav>
+
+    <a id="toplink" href="#top">top</a>
+    <a id="homelink" href="./index.html">home</a>
+
+
+    <main>
+        <h1>JavaScript-Intro</h1>
+
+        <section id="was-ist-javascript">
+            <h2>Was ist JavaScript?</h2>
+
+            <figure>
+                <img src="./assets/img/unmoebeliert.jpg" alt="">
+                <figcaption>HTML: Struktur, Gerüst</figcaption>
+            </figure>
+            <figure>
+                <img src="./assets/img/moebeliert.webp" alt="">
+                <figcaption>CSS: Gestaltung, Einrichtung</figcaption>
+            </figure>
+            <figure>
+                <img src="./assets/img/beleuchtet.png" alt="">
+                <figcaption>Javascript: Verhalten, Interaktion</figcaption>
+            </figure>
+
+            <p>Ähnlich wie bei CSS gibt es verschiedene Möglichkeiten, Javascript einzubinden: direkt im HTML-Code, innerhalb eines <code>&lt;script&gt;&lt;/script&gt;</code> oder in einer einen eigenen Datei. Wir verwenden die letzte Möglichkeit. Dafür erstellen wir eine neue Datei <code>script.js</code> und verlinken die Datei am Ende unseres <code>&lt;body&gt</code>-Elements.
+                        <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="de"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;HTML Einführung&lt;/title&gt;
+    &lt;/head&gt;    
+&lt;body&gt;
+
+&lt;script src="js/script.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;/html&gt;
+                                    </code></pre> </p>
+
+                                    <p>In diese Datei können wir nun unseren Javascript-Code schreiben und er wird automatisch ausgeführt.</p>
+
+            <a href="./js-intro.zip" download>Download JavaScript-Starter</a>
+        </section>
+
+        <section id="logging">
+            <h2>Logging</h2>
+
+            <p>Es gibt verschiedene Möglichkeiten, mit Javascript Inhalte anzuzeigen. 
+            </p>
+
+            <p>Eine Möglichkeit ist, ein Pop-Up zu öffnen: <code>window.alert('Hello World')</code></p>
+
+            <p>Eine andere Möglichkeit ist, die Entwickler-Console zu verwenden: <code>console.log('Hello World')</code>. Drücke <code>Option + ⌘ + I</code> (Mac) oder <code>Srg + I</code> (Windows) und klicke anschließend auf „Console“ um den Inhalt zu sehen. </p>
+
+        </section>
+
+        <section id="html-elemente">
+            <h2>HTML-Elemente auswählen</h2>
+
+            <p>Zunächst müssen wir das Element finden und auswählen, welches wir manipuliern möchten</p>
+            <p>Es gibt verschiedenste Wege, das zu erreichen. Einige Beispiele:</p><br>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Selector</th>
+                        <th>Beispiel</th>
+                        <th>Beschreibung</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <pre>document.getElementById('')</pre>
+                        </td>
+                        <td><pre>document.getElementById('first-paragraph')</pre></td>
+                        <td>wählt das Element mit der ID <code>first-paragraph</code></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>document.querySelectorAll('.')</pre>
+                        </td>
+                        <td>
+                            <pre>document.querySelectorAll('.circle')</pre>
+                        </td>
+                        <td>wählt die Elemente mit der Klasse <code>circle</code> aus</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>document.querySelectorAll('')</pre>
+                        </td>
+                        <td>
+                            <pre>document.querySelectorAll('div')</pre>
+                        </td>
+                        <td>wählt die  Elemente mit <code>div</code> Tag</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Weil es mehrere Elemente mit einer Klasse oder einem Tag geben kann, wählen die jeweiligen Selektoren eine Gruppe von Elementen aus.</p>
+
+        </section>
+
+        <section id="html-manipulation">
+            <h2>HTML-Manipulation</h2>
+
+            <p>Wir können ein HTML-Element auf verschiedene Arten Manipulieren:  </p><br>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Beispiel</th>
+                        <th>Beschreibung</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <pre>document.getElementById('first-paragraph').innerHTML = 'Hello World!'</pre>
+
+                        </td>
+                        <td>wählt das Element mit der ID <code>first-paragraph</code> aus und ändert den darinstehenden Text</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>document.getElementById('first-paragraph').style.color = 'red'</pre>
+                        </td>
+                        <td>wählt das Element mit der ID <code>first-paragraph</code> aus und ändert die Schriftfarbe</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>document.getElementById('first-paragraph').classList.add('highlighted')</pre>
+                        </td>
+                        <td>wählt das Element mit der ID <code>first-paragraph</code> aus und fügt deine Klasse hinzu</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>document.getElementById('first-paragraph').classList.remove('highlighted')</pre>
+                        </td>
+                        <td>wählt das Element mit der ID <code>first-paragraph</code> aus und entfernt eine Klasse</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Wenn ich Elemente über Klasse oder Tag auswähle und deshalb eine Gruppe von Elementen erhalte, müssen diese Elemente etwas anders angesprochen werden:
+            <pre><code>
+document.querySelectorAll('paragraph').forEach((element) => {
+    element.innerHTML = 'Hello World!'
+})
+            </code></pre>
+            </p>
+        </section>
+
+        <section id="event-listeners">
+            <h2>Event-Listeners</h2>
+
+            <p>Javascript „events“ sind Ereignisse, die auf einer Webseite passieren. Häufig hängen sie mit einer User-Interaktion zusammen. Wir können mit Javascript HTML-Manipulationen an diese Ereignisse koppeln.</p><br>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>event</th>
+                        <th>Beispiel</th>
+                        <th>Beschreibung</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>click</td>
+                        <td>
+                            <pre>
+window.addEventListener('click', () => {
+    document.getElementById('first-paragraph').classList.add('highlighted')
+})
+                            </pre>
+                        </td>
+                        <td>wenn der User auf das Fenster klickt, erhält das Element eine neue Klasse</td>
+                    </tr>
+                    <tr>
+                        <td>resize</td>
+                        <td>
+                            <pre>
+window.addEventListener('resize', () => {
+    document.getElementById('first-paragraph').classList.add('highlighted')
+})
+                             </pre>
+                        </td>
+                        <td>wenn der User die Fenstergröße verändert, erhält das Element eine neue Klasse</td>
+                    </tr>
+                    <tr>
+                        <td>scroll</td>
+                        <td>
+                            <pre>
+window.addEventListener('scroll', () => {
+    document.getElementById('first-paragraph').classList.add('highlighted')
+})
+                        </pre>
+                        </td>
+                        <td>wenn der User scrollt, erhält das Element eine neue Klasse</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Der Code kann auf Events reagieren, die das gesamte Browser-Fenster betreffen (wie ein Scroll im Fenster), oder auf Events, die nur ein einzelnes Element betrifft. So wird z.B. nur auf ein Klick auf einen button reagiert:
+            <pre><code>
+document.getElementById('my-button').addEventListener('scroll', () => {
+
+})
+</code>
+            </pre>
+            </p>
+        </section>
+    
+
+        <section class="material" id="resources">
+            <h2>Ressourcen</h2>
+            <ul>
+                <li><a target="_blank" href="https://www.codecademy.com/learn/introduction-to-javascript">Code Academy</a></li>
+                <li><a target="_blank" href="https://www.w3schools.com/js/js_intro.asp">Javascript Intro W3 Schools</a></li>
+                <li><a target="_blank" href="https://wiki.selfhtml.org/wiki/JavaScript/Tutorials">SelfHTML Javascript Tutorial</a></li>
+            </ul>
+        </section>
+    
+
+    </main>
+    <script src="./script.js" type="text/javascript"></script>
+
+</body>
+
+</html>

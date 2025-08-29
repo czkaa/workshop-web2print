@@ -1,0 +1,44 @@
+body {
+    padding-bottom: 100vh;
+}
+.element {
+    background: orchid;
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+}
+
+.container {
+    background: yellow;
+}
+
+
+#nebeneinander {
+    display: flex;
+    justify-content: space-between;
+}
+
+#relativ-element {
+    position: relative;
+    top: 20px;
+    left: 100px;
+    background-color: lime;
+}
+
+#absolut-container {
+    position: relative;
+}
+
+#absolut-element {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: orangered;
+}
+
+#fixiert {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: blue;
+}

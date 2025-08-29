@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="introductions.css">
+
+    <title>Web-to-Print CSS</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="#einleitung">Einleitung</a></li>
+            <li><a href="#media">Media Queries</a></li>
+            <div><a href="#units">Units</a>, <a href="#formats">Formate</a></div></li>
+            <li><a href="#breaks">Seitenumbrüche</a></li>
+            <li><a href="#resources">Ressourcen</a></li>
+        </ul>
+    </nav>
+
+    <a id="toplink" href="#top">top</a>
+    <a id="homelink" href="./index.html">home</a>
+
+    <main>
+
+        <section id="einleitung">
+            <h2>Was ist Web-to-Print?</h2>
+            <p>Jede Webseite lässt sich ausdrucken!</p>
+            
+            <p class="task">Öffne ein beliebiges Dokument im Browser und wähle
+                <code>Datei → Drucken → Vorschau</code> oder <code>STRG + P</code>, um zu sehen, wie es auf Papier aussehen würde. Wenn du als Ausgabe <i>PDF</i> auswählst, kannst du es dir als Datei ausgeben lassen.</p>
+
+            <p>Der Inhalt ist gleich, aber das Medium ein anderes! Anders als auf dem Bildschirm müssen wir dessen physische Eigenschaften Mediums berücksichtigen, wie:
+            Papiergröße, Ränder, Seitenumbrüche und Druckfarben. Mit CSS haben wir die Möglichkeit, genau das zu tun!</p>
+            <p>Die Print-Funktion kann auch genutzt werden, um ein PDF zu generieren, dass vielleicht gar nicht für Print gedacht wird. </p>
+
+            <p>Code kann als Open-Source Gestaltungstool genutzt werden!</p>
+
+        </section>
+
+        <section id="media">
+            <h2>Media Queries</h2>
+            <p>Media Queries erlauben es, CSS nur für bestimmte Medien anzuwenden. Für Druck ist das
+                <code>print</code>-Medium wichtig:</p>
+
+            <pre><code>
+@media print {
+    body {
+        font-size: 12pt;
+        color: black;
+        background: white; /* Hintergründe vermeiden */
+    }
+
+    nav, .no-print {
+        display: none; /* Navigation und nicht-druckbare Elemente ausblenden */
+    }
+}
+            </code></pre>
+
+            <p>Man kann im Browser die Druckansicht simulieren, um ein Gefühl dafür zu bekommen, wie das Ergebnis aussieht. In Firefox geht das übr den Button <i>Toggle print media simulation for the page</i> drücken, um die Druckansicht zu simulieren.</p>
+
+            <ul>
+                <li>Farben für besseren Druck vereinfachen</li>
+                <li>Navigation oder Menüs ausblenden</li>
+                <li>Hintergrundbilder entfernen</li>
+                <li>Seitenränder definieren</li>
+            </ul>
+        </section>
+
+        <section id="units">
+            <h2>Einheiten für Print</h2>
+            <p>Webseiten sind meistens in Pixel beschrieben, oder responsiv im Bezug auf die Fenster-Breite. Druckerzeignisse dagegen verwenden eher physische Einheiten..</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Unit</th>
+                        <th>Name</th>
+                        <th>Pixels</th>
+                        <th>Metric</th>
+                        <th>Imperial (approx.)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>cm</td>
+                        <td>Centimeter</td>
+                        <td>37.8px</td>
+                        <td>10mm</td>
+                        <td>25/64 of 1in</td>
+                    </tr>
+                    <tr>
+                        <td>mm</td>
+                        <td>Millimetre</td>
+                        <td>3.78px</td>
+                        <td>1mm</td>
+                        <td>3/64 of 1in</td>
+                    </tr>
+                    <tr>
+                        <td>Q</td>
+                        <td>Quarter-millimeter</td>
+                        <td>0.945px</td>
+                        <td>0.25mm</td>
+                        <td>1/64 of 1in</td>
+                    </tr>
+                    <tr>
+                        <td>in</td>
+                        <td>Inch</td>
+                        <td>96px</td>
+                        <td>25.4mm</td>
+                        <td>1in</td>
+                    </tr>
+                    <tr>
+                        <td>pc</td>
+                        <td>Pica</td>
+                        <td>16px</td>
+                        <td>4.23mm*</td>
+                        <td>1/6th of 1in</td>
+                    </tr>
+                    <tr>
+                        <td>pt</td>
+                        <td>Point</td>
+                        <td>1.3px*</td>
+                        <td>0.3527mm*</td>
+                        <td>1/72nd of 1in</td>
+                    </tr>
+                    <tr>
+                        <td>px</td>
+                        <td>Pixel</td>
+                        <td>1px</td>
+                        <td>0.264583mm*</td>
+                        <td>1/96th of 1in</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="@page">
+            <h2>@page</h2>
+            <p> <code>@page</code> ist eine CSS-Regel, die verwendet wird, um verschiedene Aspekte von Druckseiten zu ändern. Sie zielt auf die Dimensionen, die Ausrichtung und die Ränder der Seite ab und modifiziert diese. Die @page At-Regel kannverwendet werden, um alle Seiten in einem Ausdruck oder einen Teil mittels ihrer verschiedenen Pseudoklassen zu zielen.</p>
+
+<pre><code>
+/* Spricht alle Seiten an */
+@page {
+    margin-top: 4cm;
+}
+
+/* Spricht alle geraden Seiten an */
+    @page :left {
+    margin-top: 4cm;
+}
+
+/* Spricht alle ungeraden Seiten an */
+@page :right {
+    margin-top: 4cm;
+}
+
+/* Spricht alle Selektoren mit `page: wide;` an */
+@page wide {
+    margin-top: 1cm;
+}
+</code></pre>
+
+        </section>
+
+        <section id="formats">
+            <h2>Druckformate</h2>
+            <p>Mit CSS kann direkt das Format des Papiers definiert werden. Das funktioniert über <code>@page</code></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Format</th>
+                        <th>Abmessung</th>
+                        <th>Beschreibung</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>A4</td>
+                        <td>210mm x 297mm</td>
+                        <td>Standardbrief und Dokumente</td>
+                    </tr>
+                    <tr>
+                        <td>A3</td>
+                        <td>297mm x 420mm</td>
+                        <td>Poster oder größere Layouts</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Formate werden mit @page definiert.</p>
+            <pre><code>
+@page {
+    size: A4; /* oder A3, Letter, landscape */
+    margin: 2cm; /* Seitenränder */
+}
+
+@page :landscape {
+    size: A4 landscape;
+    margin: 1in;
+}
+            </code></pre>
+
+            <p>Bei den Margins ist es wichtig zu bedenken, dass jeder Drucker eigene Seitenränder erzeugt.</p>
+        </section>
+
+        <section id="breaks">
+            <h2>Seitenumbrüche</h2>
+
+            <h3>break-after</h3>
+            <p>Seitenumbrüche verhindern ungewollte Trennungen von Absätzen, Überschriften oder Tabellen.</p>
+
+            <pre><code>
+/* Seitenumbruch vor heder h2 Überschrift */
+h2 {
+    page-break-before: always; 
+}
+
+/* Seitenumbruch nach jedem Absatz */
+p {
+    page-break-after: always;
+}
+            </code></pre>
+
+            <h3>break-inside</h3>
+            <p>Die Eigenschaft <code>break-inside</code> steuert, ob ein Element innerhalb einer Seite oder Spalte geteilt werden darf:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Wert</th>
+                        <th>Beschreibung</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>auto</td>
+                        <td>Ein Umbruch ist erlaubt, aber nicht erzwungen.</td>
+                    </tr>
+                    <tr>
+                        <td>avoid</td>
+                        <td>Vermeidet Umbrüche innerhalb des Elements (Seite, Spalte oder Region).</td>
+                    </tr>
+                    <tr>
+                        <td>avoid-page</td>
+                        <td>Vermeidet einen Seitenumbruch.</td>
+                    </tr>
+                    <tr>
+                        <td>avoid-column</td>
+                        <td>Vermeidet einen Spaltenumbruch.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <pre><code>
+p {
+    break-inside: avoid;
+}
+            </code></pre>
+
+            
+            <h3>Kopf- und Fußzeilen / Pagination</h3>
+            <p>Mit CSS kann man Kopf- und Fußzeilen definieren und Seitenzahlen hinzufügen:</p>
+
+            <pre><code>
+@page {
+    margin: 2cm;
+
+    @top-left {
+        content: "Dokumenttitel";
+    }
+
+    /* Seitenzahl */
+    @bottom-right {
+        content: counter(page); 
+    }
+}
+            </code></pre>
+        </section>
+
+        <section class="material" id="resources">
+            <h2>Ressourcen</h2>
+            <ul>
+                <li><a href="https://piccalil.li/blog/printing-the-web-making-webpages-look-good-on-paper/">Priting the Web marking
+                            Webpages Look Good on Paper</a></li>
+                <li><a href="https://wiki.selfhtml.org/wiki/Print-CSS">Print CSS</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Printing">CSS Media
+                        Queries</a></li>
+                <li><a href="https://printjs.crabbly.com/">print.js</a></li>
+                <li><a href="https://osp.kitchen/tools/html2print/">HTML2Print Boilerplate</a>(OSP)</li>
+                <li><a href="https://hub.xpub.nl/cerealbox/~imre/css-print/CSS_Print.html">CSS Print</a>(XPUB)</li>
+                <li><a href="https://pagedjs.org/">pages.js</a></li>
+                <li><a href="https://gitlab.com/Luuse/pad2print">Pad2Print</a></li>
+            </ul>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="form.css">
+
+
+    <title>Fragebogen</title>
+    <style>
+
+        
+    </style>
+</head>
+<body>
+    <main>
+        <form>
+            <div class="checkContainer">
+                <label for="gefühl">Wenn du deinem vorbereiteten Material ein Gefühl zuweisen müsstest, welches wäre es?</label><br>
+                <textarea type="text" id="gefühl" name="gefühl"></textarea>
+            </div>
+        
+            <div class="checkContainer">
+                <label for="klang">Welchen Klang oder welche Geräusche assozierst du mit deinem Material? Welche Geräuschintensität?</label><br>
+                <textarea type="text" id="klang" name="klang"></textarea>
+            </div>
+        
+            <div class="checkContainer">
+                <label for="farbe">Welche Farben verbindest du damit?</label><br>
+                <textarea type="text" id="farbe" name="farbe"></textarea>
+            </div>
+        
+            <div class="checkContainer">
+                <legend>Welche Form passt du deinen Inhalten?</legend>
+                <input type="checkbox" id="eckig" name="eckig">
+                <label for="eckig">eckig</label>
+                
+                <input type="checkbox" id="rund" name="rund">
+                <label for="rund">rund</label>
+                
+                <input type="checkbox" id="zackig" name="zackig">
+                <label for="zackig">zackig</label><br>
+                
+                <input type="checkbox" name="andere" value="andere">
+                <input type="text">
+            </div>
+        
+            <div class="checkContainer">
+                <legend>Und welche Konsistenz?</legend>
+
+                <input type="checkbox" id="flüssig" name="flüssig">
+                <label for="flüssig">flüssig</label>
+
+                <input type="checkbox" id="weich" name="weich">
+                <label for="weich">weich</label>
+                
+                <input type="checkbox" id="porös" name="porös">
+                <label for="porös">porös</label>
+                
+                <input type="checkbox" id="dicht" name="dicht">
+                <label for="dicht">dicht</label><br>
+                
+                <input type="checkbox" name="andere" value="andere">
+                <input type="text">
+            </div>
+        
+            <div class="checkContainer">
+                <legend>Ist dein Material eher ...</legend>
+                <input type="checkbox" name="chaos" id="chaos">
+                <label for="chaos">chaotisch?</label>
+
+                <input type="checkbox" name="struktur" id="struktur">
+                <label for="struktur">strukturiert?</label>
+            </div>
+        
+            <div class="checkContainer">
+                <legend>Ist es eher ...</legend>
+
+                <input type="checkbox" name="offen" id="offen">
+                <label for="offen">offen?</label>
+        
+                <input type="checkbox" name="zu" id="zu">
+                <label for="zu">verschlossen?</label>
+            </div>
+        
+            <div class="checkContainer">
+                <legend>Und ist es eher ...</legend>
+                <input type="checkbox" name="linear" id="linear">
+                <label for="linear">linear?</label>
+        
+                <input type="checkbox" name="verworren" id="verworren">
+                <label for="verworren">verworren?</label>
+        
+                <input type="checkbox" name="schachtelt" id="schachtelt">
+                <label for="schachtelt">verschachtelt?</label>
+            </div>
+        
+            <input type="submit" value="Fragebogen drucken" onclick="window.print();">
+        </form>
+        
+        <hr>
+        
+        <div id="diagramme">
+            <p>
+                Male eine zwei- oder dreidimensionale Repräsentation deiner Inhalte als
+                schnelle Skizze. Du kannst dich an einem Zeitstrahl, einer Karte, Flow-Charts, Tortendiagrammen oder anderen Formaten orientieren – oder ganz frei daran
+                herangehen!
+            </p>
+            <ol>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+
+    </main>
+   
+
+</body>
+</html>

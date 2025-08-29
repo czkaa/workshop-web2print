@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Einführung</title>
+
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="introductions.css">
+
+
+</head>
+
+<body>
+
+    <nav>
+        <ul>    
+            <li><a href="#was-ist-eine-webseite">Was ist eine <br>Webseite?</a></li>
+            <li><a href="#was-ist-html">Was ist HTML?</a></li>
+            <li><a href="#grundstruktur">Grundstruktur</a></li>
+            <li><a href="#elemente">HTML-Elemente</a></li>
+            <li><a href="#hinweise">Hinweise</a></li>
+        </ul>
+    </nav>
+
+    <a id="toplink" href="#top">top</a>
+    <a id="homelink" href="./index.html">home</a>
+
+
+    <main>
+        <h1>HTML-Intro</h1>
+
+        <section id="was-ist-eine-webseite">
+            
+            <h2>1. Was ist eine Webseite? </h2>
+            <p>Eine Ansammlung von Dateien auf einem Web-Server</p>
+        </section>
+
+        <section id="was-ist-html">
+            <h2>2. Was ist HTML? </h2>
+
+            <video controls src="./assets/video/head.mp4"></video>
+
+            <p><i><b>H</b>yper<b>T</b>ext <b>M</b>arkup <b>L</b>aguage</i></p>
+            <p>Die Struktur einer Webseite; human-readable Text, der von einem Web-Browser interpretiert wird</p>
+
+            <figure>
+                <img src="./assets/img/unmoebeliert.jpg" alt="">
+                <figcaption>HTML: Struktur, Gerüst</figcaption>
+            </figure>
+            <figure>
+                <img src="./assets/img/moebeliert.webp" alt="">
+                <figcaption>CSS: Gestaltung, Einrichtung</figcaption>
+            </figure>
+
+            <p class="task">Öffne eine Beliebige Seite und drücke <code>Option + ⌘ + U</code> (Mac) oder
+                <code>Srg + U</code> (Windows)</p>
+        </section>
+
+
+        <section id="grundstruktur">
+            <h2>2. Grundstruktur eines HTML-Dokuments</h2>
+
+
+            <pre><code>
+&lt;!DOCTYPE html&gt;
+    &lt;html lang="de"&gt;
+        &lt;head&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+            &lt;title&gt;HTML Einführung&lt;/title&gt;
+        &lt;/head&gt;    
+    &lt;body&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+
+            <p>Eine Abfolge von Container</p>
+            <p><code>&lt;!DOCTYPE html&gt;</code>: Deklariert den Dokumenttyp und die Version.</p>
+            <p><code>&lt;html lang="de"&gt;</code>: Äußeres mit Spracheinstellung</p>
+            <p>Der <code>&lt;head&gt;</code>-Bereich enthält wichtige (Meta-)Informationen über die Seite, wie Titel,
+                Zeichensatz und externe Dateien (z. B. CSS).</p>
+        </section>
+
+
+        <section id="elemente">
+
+            <h2>3. HTML-Elemente</h2>
+
+            <video controls src="./assets/video/body.mp4"></video>
+
+            <p>Der <code>&lt;body&gt;</code>-Bereich enthält den eigentlichen Inhalt der Webseite. Dieser Inhalt wird
+                meisten über HTML-Elemente strukturiert</p>
+
+
+            <p>Ein HTML-Element besteht aus einem <strong style="color: red">öffnenden Tag</strong>, einem <strong
+                    style="color: blue">Inhalt</strong> und einem <strong style="color: rgb(255, 0, 230)">schließenden
+                    Tag</strong>.</p>
+            <p>
+            <pre><code>
+<span style="color: red">&lt;p&gt;</span><span style="color: blue">Dies ist ein Absatz.</span><span style="color: rgb(255, 0, 230)">&lt;/p&gt;</span>
+                </code></pre>
+            </p>
+
+            <p>Einige Tags versehen Inhalte mit einem default-Styling, andere nicht.</p>
+
+            <p>Tags können <span style="color: red">Attribute</span> enthalten: <code>
+            &lt;a <span style="color: red">href="/unterseite"</span>/&gt;Dies ist ein Link&lt;/p&gt;</span>
+                            </code></p>
+
+            <p>Einige Tags sind selbstschließend und benötigen keinen schließenden Tag: <code>&lt;img src="image.png"/&gt;</code></p>
+
+            <p>Nicht alle Tags haben Inhalt: <code>&lt;br&gt;</code></p>
+
+            <p>Die Inhalte eines HTML-Dokuments werden von oben nach unten und von links nach rechts angezeigt. Es gibt sogenannte block-Elemente, die 100% der Seitenbreite annehmen. Sogenannte inline-Elemente sind genau so breit wie ihr Inhalt und können deshalb horizontal nebeneinander stehen, wenn genug Platz ist.</p>
+        
+
+
+
+            <section >
+                <h2>4. Häufige HTML-Elemente</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tag</th>
+                        <th>Darstellung</th>
+                        <th>Display</th>
+                        <th>Selbst-<br>schließend</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>&lt;i&gt;&lt;/i&gt;</td>
+                        <td class="reset"><i>kursiv</i></td>
+                        <td>inline</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>&lt;b&gt;&lt;/b&gt;</td>
+                        <td class="reset"><b>bold</b></td>
+                        <td>inline</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>&lt;s&gt;&lt;/s&gt;</td>
+                        <td class="reset"><s>durchgetrichen</s></td>
+                        <td>inline</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>&lt;mark&gt;&lt;/mark&gt;</td>
+                        <td class="reset"><mark>markiert</mark></td>
+                        <td>inline</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>&lt;sub&gt;&lt;/sub&gt;</td>
+                        <td class="reset"><sub>tiefgestellt</sub></td>
+                        <td>inline</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>&lt;h1&gt;&lt;/h1&gt;</td>
+                        <td class="reset"><h1>große Überschrift</h1></td>
+                        <td>inline</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>&lt;h2&gt;&lt;/h2&gt;</td>
+                        <td class="reset">
+                            <h2>kleinere Überschrift</h2>
+                        </td>
+                        <td>block</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>&lt;br&gt</td>
+                        <td class="reset">
+                            Zeilen<br>umbruch
+                        </td>
+                        <td>block</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>&lt;img src=""&gt;</td>
+                        <td class="reset">
+                            ??
+                        </td>
+                        <td>inline</td>
+                        <td>ja</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;a href=""&gt;&lt;/a &gt;</td>
+                        <td class="reset">
+                            <a href="">Link</a>
+                        </td>
+                        <td>inline</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>&lt;hr&gt;</td>
+                        <td class="reset">
+                            <hr>
+                        </td>
+                        <td>block</td>
+                        <td>ja</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>
+&lt;ol&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+&lt;ol&gt;
+                            </pre>
+                        </td>
+                        <td class="reset"><ol><li>Punkt</li><li>Punkt</li></ol></td>
+                        <td>block</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>
+&lt;ul&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+&lt;ul&gt;
+                                                </pre>
+                        </td>
+                        <td class="reset">
+                            <ul>
+                                <li>Punkt</li>
+                                <li>Punkt</li>
+                            </ul>
+                        </td>
+                        <td>block</td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;button&gt;&lt;/button&gt;</td>
+                        <td class="reset"><button>button</button></td>
+                        <td>inline</td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;input type="range"&gt;&lt;/input&gt;</td>
+                        <td class="reset"><input type="range"></td>
+                        <td>block</td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;textarea&gt;&lt;/textarea&gt;</td>
+                        <td class="reset"><textarea></textarea></td>
+                        <td>block</td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <pre>
+&lt;select&gt;
+    &lt;optgroup&gt;
+        &lt;option&gt;&lt;/option&gt;
+        &lt;option&gt;&lt;/option&gt;
+    &lt;optgroup&gt;
+&lt;/select&gt;
+                            </pre>
+                        </td>
+                       
+                        <td class="reset">
+                           <select>
+                                <optgroup label="Option Group">
+                                    <option>A</option>
+                                    <option>B</option>
+                                    <option>C</option>
+                                </optgroup>
+                           </select>
+                           
+                        <td>block</td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td class="reset">
+                            <pre>
+&lt;summary&gt;
+    &lt;details&gt;&lt;/details&gt;
+&lt;/summary&gt;
+                            </pre>
+                        </td>
+
+                        <td class="reset">
+                            <summary>
+                                Sichbarer Text
+                                <details>Ausgeklappter text</details>
+                            </summary>
+
+                        <td>block</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table> 
+
+
+
+        </section>
+
+        <section id="uebung">
+            <h2>Übung 1: HTML Poetry</h2>
+
+            <p class="task">
+                Wähle einen Text oder Textausschnitt aus einem Material aus. Der Text sollte nicht zu lang sein.
+                Illustriere den Text mittels HTML-Elementen aus der Liste oben oder <a href="https://htmlreference.io/"
+                    target="_blank">dieser Liste</a>.
+                Wenn du fertig bist, schau ihn dir in unterschiedlichen Browsern an!
+                Erstelle <a target="_blank" href="https://drive.google.com/drive/folders/19Nlm4L5L43py7w65EMXvvLef6JW8V8TB?usp=drive_link">hier</a> einen Ordner mit deinem Namen und lade dort den Ordner mit deinem Experiment hoch :)
+            </p>
+        </section>
+
+        <section id="hinweise">
+             <h2>Tipps</h2>
+
+            <ul>
+                <li>Fehlende schließende Tags</li>
+                <li>Falsch verschachtelte Elemente (Hier hilft sauberes Einrücken!)</li>
+                <li>Fehlende Anführungszeichen bei Attributen</li>
+            </ul>
+            <p><a href="https://validator.w3.org/nu/#textarea" target="_blank">Hier</a> kannst du deinen HTML-Code
+            überprüfen!</p>
+        </section>
+
+        <section class="material">
+            <h2>Ressourcen</h2>
+            <ul>
+                <li><a target="_blank" href="https://handmade-web.net/spring22/assets/html.pdf">HTML Slideshow (Aidan Quinlan)</a></li>
+                <li><a target="_blank" href="https://www.w3schools.com/html/html_basic.asp">HTML (W3 Schools)</a></li>
+                <li><a target="_blank" href="https://htmlreference.io/">Liste mit HTML-Elementen</a></li>
+                <li><a target="_blank" href="https://learn.shayhowe.com/html-css/getting-to-know-html/">Getting to Know HTML</a></li>
+                <li><a target="_blank" href="https://www.freecodecamp.org/">freeCodecamp</a></li>
+            
+            </ul>
+        </section>
+    
+
+    </main>
+    <script src="./script.js" type="text/javascript"></script>
+
+</body>
+
+</html>

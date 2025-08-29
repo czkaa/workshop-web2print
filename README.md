@@ -1,1 +1,1 @@
-# workshop-web2print
+# workshop-shoulder-surfing

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="introductions.css">
+
+    <title>Einführung CSS</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="#wie">Syntax</a></li>
+            <li><a href="#selectors">Selectors</a></li>
+            <li><a href="#properties">Properties</a></li>
+            <li><a href="#values">Units</a></li>
+            <li><a href="#resources">Ressourcen</a></li>
+        </ul>
+    </nav>
+
+    <a id="toplink" href="#top">top</a>
+    <a id="homelink" href="./index.html">home</a>
+
+    <main>
+
+                    <h1>CSS-Intro</h1>
+
+        <section id="was">
+            <h2>Was ist CSS?</h2>
+            
+            <p>Regeln, die das Aussehen einer Webseite beschreiben</p>
+            <figure>
+                <img src="./assets/img/unmoebeliert.jpg"
+                    alt="Ein unmöbelierter Raum mit vielen offenen Türen und weißen Wänden.">
+                <figcaption>HTML: Struktur, Gerüst</figcaption>
+            </figure>
+            <figure>
+                <img src="./assets/img/moebeliert.webp"
+                    alt="Ein gemütlicher Raum mit Teppich, bunten Möbel Stücken und Sesseln davor.">
+                <figcaption>CSS: Gestaltung, Einrichtung</figcaption>
+            </figure>
+        </section>
+
+
+        <section id="wie">
+            <h1>Wie schreibe ich CSS?</h1>
+            <figure>
+                <img src="./assets/img/css-01.png" alt="Text CSS Syntax.">
+                <figcaption>Einzelne Bestandteile</figcaption>
+            </figure>
+
+            <figure>
+                <img src="./assets/img/css-02.png" alt="Text CSS Satzzeichen.">
+                <figcaption>Satzzeichen</figcaption>
+            </figure>
+        </section>
+
+        <section id="selectors">
+            <h1>Basic selectors</h1>
+            <p>Um ein oder mehrere Elemente des HTML zu stylen, müssen wir es geziehlt auswählen (select).</p>
+
+            <p>
+            <p>
+            <pre><code>
+&lt;p&gt;<span style="color: red">Dies ist ein Absatz.</span>&lt;/p&gt;
+                    </code></pre>
+            </p>
+
+            <pre><code>
+p {
+    color: red;
+}
+                </code></pre>
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Selector</th>
+                        <th>Beispiel</th>
+                        <th>Beschreibung</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>*</td>
+                        <td>
+                            <pre>* {
+    background-color: white;
+}</pre>
+                        </td>
+                        <td>alle Elemente (am wenigsten spezifisch)</td>
+                    </tr>
+                    <tr>
+                        <td>element</td>
+                        <td>
+                            <pre>p {
+    font-weight: bold;
+}</pre>
+                        </td>
+                        <td>alle HTML Elemente die ein &lt;p&gt; tag haben</td>
+                    </tr>
+                    <tr>
+                        <td>.class</td>
+                        <td>
+                            <pre>.class {
+    text-decoration: underline;
+}</pre>
+                        </td>
+                        <td>alle HTML Elemente mit der Klasse (class=" ")</td>
+                    </tr>
+                    <tr>
+                        <td>#id</td>
+                        <td>
+                            <pre>#id {
+    color: red;
+}</pre>
+                        </td>
+                        <td>HTML Element mit ID (am meisten spezifisch, jede ID nur 1x verwenden)</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Combinators: mehr als ein selector hintereinander</td>
+                    </tr>
+                    <tr>
+                        <td>inner</td>
+                        <td>
+                            <pre>#id p { }</pre>
+                        </td>
+                        <td>Wählt alle &lt;p&gt; Elemente die innerhalb von #id sind</td>
+                    </tr>
+                    <tr>
+                        <td>chained</td>
+                        <td>
+                            <pre>#id, p { }</pre>
+                        </td>
+                        <td>Wählt das #id element und alle &lt;p&gt; Elemente </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Pseudo Selectors: werden mit : geschrieben, fragen Element status ab</td>
+                    </tr>
+                    <tr>
+                        <td>:hover</td>
+                        <td>
+                            <pre>p:hover { 
+    color: blue;
+}</pre>
+                        </td>
+                        <td>Hover beschreibt was passiert wenn du deinen cursor über dem Element bewegst. Hier: wenn du
+                            über &lt;p&gt; hoverst, ändert sich die Textfarbe zu Blau.</td>
+                    </tr>
+                    <tr>
+                        <td>:active</td>
+                        <td>
+                            <pre>a:active { 
+    color: yellow;
+}</pre>
+                        </td>
+                        <td>Wenn ein link geklickt wurde</td>
+                    </tr>
+                    <tr>
+                        <td>:has</td>
+                        <td>
+                            <pre>div:has(p) {
+    background-color: grey;
+}</pre>
+                        </td>
+                        <td>Wähle alle &lt;div&gt; Elemente in denen ein oder meherere &lt;p&gt; enthalten sind.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Die häufigsten Selektoren sind ID und Klassen. IDs werden für Elemente benutzt, die nur ein mal auf der
+                Seite auftauchen. Ein Element kann nur eine ID haben. Klassen werden verwendet, um Gruppen von Elementen
+                anzusprechen. Ein Element kann mehrere Klassen haben</p>
+
+            <p>Eine Selektoren sprechen den Tag eines Elementes an, andere können über Attribute eingefügt werden</p>
+            <pre><code>
+<span style="color: red;">&lt;a <span style="color: blue">id="first-link"</span><span style="color: rgb(255, 0, 234)"> class="italic-link"</span>&gt;</span><span style="font-style: italic; text-decoration-style: dotted; text-decoration: underline;">Ich bin ein Absatz</span><span style="color: red">&lt;/a&gt;</span>
+            </code></pre>
+
+            <pre><code>
+a {
+    color: black;
+}
+
+#first-link {
+    text-decoration: underline;
+}
+
+.italic-link {
+    font-style: italic;
+}
+            </code></pre>
+            <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_selectors">Übersicht über alle
+                CSS-Selektoren</a> <br>
+            <a target="_blank" href="https://css-tricks.com/css-selectors/">CSS Tricks</a>
+
+        </section>
+
+        <section id="properties">
+            <h1>Basic properties</h1>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Property</th>
+                    <th>Beispiele</th>
+                    <th>Beschreibung</th>
+                    <th>Links</th>
+                </tr>
+                <tr>
+                    <td rowspan="5">Styles</td>
+                    <td><pre>color</pre></td>
+                    <td>
+                        <pre>color: blue; 
+background-color: grey;</pre>
+                    </td>
+                    <td>CSS kennt 145 Farben beim Namen</td>
+                    <td><a target="_blank" href="https://raphaelbastide.com/salmon-olive/">HTML Colors List</a></td>
+                </tr>
+                <tr>
+                    <td>fonts</td>
+                    <td>
+                        <pre>font-family: sans-serif; 
+font-size: 1vw; 
+font-weight: bold; 
+text-decoration: underline;</pre>
+                    </td>
+                    <td></td>
+                    <td><a target="_blank" href="https://cssreference.io/typography/">CSS Typography</a> <br>
+                        <a target="_blank" href="https://web.dev/learn/css/typography">very detailed CSS Typography</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>transform</td>
+                    <td>
+                        <pre>transform: translate(x,y);
+transform: roate(0deg);
+transform: skew(xdeg, ydeg);
+transform: scale(0);</pre>
+                    </td>
+                    <td></td>
+                    <td><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform">Transform MDN Reference</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>filter</td>
+                    <td>
+                        <pre>filter: blur(0px);
+filter: invert(0%);
+filter: contrast(200%);</pre>
+                    </td>
+                    <td>Fügt einen Filter zu Bildern oder anderen Elementen wie Text hinzu.</td>
+                    <td><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter">Filter MDN Reference</a><br>
+                        <a
+                            target="_blank" href="https://www.w3schools.com/cssref/playdemo.php?filename=playcss_filter&preval=blur(5px)">Filter
+                            Demo</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>shadow</td>
+                    <td>
+                        <pre>text-shadow: 2px 2px 5px blue;
+box-shadow: 3px 5px 5px red;
+</pre>
+                    </td>
+                    <td>offset-x, offset-y, blur radius, color</td>
+                    <td>
+                        Box-shadow:
+                        <a target="_blank" href="https://css-tricks.com/almanac/properties/b/box-shadow/">CSS Tricks Reference</a><br>
+                        <a target="_blank" href="https://www.cssmatic.com/box-shadow">Generator</a><br>
+                        Text-Shadow:
+                        <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow">MDN Reference</a><br>
+                        <a target="_blank" href="https://cssgenerator.org/text-shadow-css-generator.html">Generator</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="5">Größe</td>
+                    <td><pre>width</pre></td>
+                    <td>
+                        <pre>width: ;</pre>
+                    </td>
+                    <td>mögliche Units; %, px, vw, rem</td>
+                </tr>
+                <tr>
+                    <td>height</td>
+                    <td>
+                        <pre>height: ;</pre>
+                    </td>
+                    <td>mögliche Units; %, px, vw, rem</td>
+                </tr>
+                <tr>
+                    <td>margin</td>
+                    <td>
+                        <pre>margin: ;</pre>
+                    </td>
+                    <td>äußerer Abstand (mögliche Units; %, px, vw, rem)</td>
+                </tr>
+                <tr>
+                    <td>padding</td>
+                    <td>
+                        <pre>padding: ;</pre>
+                    </td>
+                    <td>innerer Abstand (mögliche Units; %, px, vw, rem)</td>
+                </tr>
+                <tr>
+                    <td>border</td>
+                    <td>
+                        <pre>border-width: 2px;
+border-color: red; 
+border-style: dotted;</pre>
+                    </td>
+                    <td></td>
+                    <td>
+                        <a target="_blank" href="https://www.w3schools.com/css/css_border.asp">W3 Schools Reference</a><br>
+                        <a target="_blank" href="https://cssgenerator.org/border-css-generator.html">Generator</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="3">Layout</td>
+                    <td><pre>position</pre></td>
+                    <td>
+                        <pre>position: absolute;
+position: fixed;
+position: relative;
+position: static; (default)</pre>
+                    </td>
+                    <td></td>
+                    <td><a target="_blank" href="https://hub.xpub.nl/cerealbox/~kim/cssposition/index.html">try it out!</a></td>
+                </tr>
+                <tr>
+                    <td>display</td>
+                    <td>
+                        <pre>display: block;
+display: inline;
+display: flex;
+display: grid;</pre>
+                    </td>
+                    <td>Mit display legen wir fest ob das Element block oder inline ist oder entscheiden Layouts wie
+                        Grid oder Flex.</td>
+                    <td><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/display">MDN Reference CSS
+                            Display</a><br>
+                        <a target="_blank" href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">CSS Tricks: Display
+                            Flex</a><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>column</td>
+                    <td>
+                        <pre>columns: 2 auto;
+column-count: 2;
+column-width: 45%;</pre>
+                    </td>
+                    <td></td>
+                    <td><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/columns">MDN Reference Columns</a>
+                    </td>
+                </tr>
+            </table>
+
+        </section>
+
+        <section id="values">
+            <h1>Basic values (units)</h1>
+            <p>Die meisten numerischen values brauchen eine unit (Einheit)</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Unit</th>
+                        <th>Beschreibung</th>
+                        <th>Links</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>%</td>
+                        <td>Prozent: immer relativ zum value des parent Elements.</td>
+                        <td rowspan="6">
+                            <a
+                                target="_blank"  href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units">MDN
+                                Reference Values and Units</a><br>
+                            <a target="_blank" href="https://css-tricks.com/css-length-units/">CSS Tricks: Length Units</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>vw</td>
+                        <td>Viewport Width prozent der Breite des viewports</td>
+                    </tr>
+                    <tr>
+                        <td>vh</td>
+                        <td>Viewport Height prozent der Höhe des viewports</td>
+                    </tr>
+                    <tr>
+                        <td>px</td>
+                        <td>Pixel sind statisch rendern values unabhängig von anderen Elmenten</td>
+                    </tr>
+                    <tr>
+                        <td>em</td>
+                        <td>relativ zur parent Element font-size</td>
+                    </tr>
+                    <tr>
+                        <td>rem</td>
+                        <td>relativ zur root font-size</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="uebung-2">
+            <h2>CSS Takeover</h2>
+
+            <p class="task">
+                Öffne eine Webeite, auf der du dich häufig aufhälst, im Browser. Drücke <code>Option + ⌘ + I</code>
+                (Mac) oder <code>Srg + I</code> (Windows), um den Inspektor zu öffnen. <br>Verändere das CSS der Seite,
+                bis sie dir besser gefällt. Achtung: Wenn du die Seite neu lädst, gehen deine Änderungen verloren! Mache einen Screenshot, wenn du fertig bist. Lade deine Screenshots <a target="_blank"
+                    href="https://drive.google.com/drive/folders/19Nlm4L5L43py7w65EMXvvLef6JW8V8TB?usp=drive_link">hier</a> in dem Ordner mit deinem Namen hoch :)
+            </p>
+            <!-- 
+                1. ..
+                -->
+        </section>
+
+        <section id="csshtml">
+            <h1>Und wie verbinde ich das mit HTML?</h1>
+
+            <p>inline</p>
+            <pre><code>
+&lt;p style="color: red;"&gt;
+    Ich bin ein Absatz
+&lt;/p&gt;
+            </code></pre>
+
+            <p>internal</p>
+            <pre><code>
+&lt;!DOCTYPE html&gt;
+    &lt;html lang="de"&gt;
+        &lt;head&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+            &lt;title&gt;CSS Einführung&lt;/title&gt;
+            &lt;style&gt;
+                p {
+                    color: red;
+                }
+            &lt;/style&gt;
+        &lt;/head&gt;
+    &lt;body&gt;
+
+    &lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+
+            <p>external</p>
+            <pre><code>
+&lt;!DOCTYPE html&gt;
+    &lt;html lang="de"&gt;
+        &lt;head&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+            &lt;title&gt;HTML Einführung&lt;/title&gt;
+            &lt;link&gt; rel="stylesheet" type="text/css" href="style.css" &gt;
+        &lt;/head&gt;    
+    &lt;body&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+
+            <!-- <img src="/assets/img/css-03.png" alt=""> -->
+        </section>
+
+        <section id="eigen">
+            <h1>Eigenheiten:</h1>
+            <p>CSS steht für <i><b>C</b>ascading <b>S</b>tyle <b>S</b>heets</i></p>
+            <p>cascading?</p>
+            <figure>
+                <img src="./assets/video/cascading.gif"
+                    alt="Animiertes GIF eines strömenden Wasserfalls, umgeben von grünem Wald.">
+                <figcaption><i>Cascading</i>(en) für <i>herabstürzen</i>, <i>hintereinanderschalten</i>, <i>etw. nach unten weitergeben</i>
+                </figcaption>
+            </figure>
+
+            <img src="./assets/img/css-04.png" alt="Drei Flächen überlagern sich.">
+
+        </section>
+
+        <section>
+            <p>CSS ist <i>deklarativ</i> (eine Liste mit Regeln)</p>
+
+            <p>Warum funktioniert das so anders als Gestaltung für Print?</p>
+            <figure>
+                <img src="./assets/img/cssvsstatic.png" alt="Buch = Buch, Website = Handy, Tablet, PC">
+                <figcaption>Design für print (Indesign etc): Designer*in kann jeden Schritt des Prozesses entscheiden,
+                    Design für Web (CSS): Benutzer*in entscheiden wie Inhalte dargestellt werden.</figcaption>
+            </figure>
+        </section>
+
+        <section id="uebung-2">
+            <h2>Stilleben</h2>
+
+            <p class="task">
+                Erstelle einen neuen Ordner auf deinem Computer und öffne ihn mit deinem Code Editor. Im Code Editor
+                erstelle ein neues Dokument z.B. <code>stilleben.html</code>.
+                <br>Jetzt brauchen wir noch einen Ort für das CSS. Erstelle ein zweites Dokument im Gleichen Ordner,
+                z.B. <code>style.css</code>. Verlinke das CSS im HTML <code>&lt;head&gt;</code>, nutze dafür die oben
+                erklärte Methode <i>external</i>.
+                <br>
+                In dieser Übung wollen wir ein Stilleben programmieren, also malen, aber statt Stiften und Papier
+                verwenden wir nur HTML und CSS. <br>
+                Du kannst Formen, Farben und Details abstrahieren oder hervorheben ... Nutze das Stilleben als
+                Ausgangspunkt.<br>
+                Lade deinen Ordner <a target="_blank"
+                    href="https://drive.google.com/drive/folders/19Nlm4L5L43py7w65EMXvvLef6JW8V8TB?usp=drive_link">hier</a> in dem Ordner mit deinem Namen hoch :)
+            </p>
+
+            <p><a href="./positioning.zip" download>Download Beispiel zur Positionierung</a></p>
+            <!-- 
+                1. ..
+                -->
+        </section>
+
+        <section class="material" id="resources">
+            <h2>Ressourcen</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference#index">CSS Reference</a></li>
+                <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">CSS Tricks: Flexbox Guide</a></li>
+                <li><a href="https://flexboxfroggy.com/">Flexbox Froggy</a> Computer Spiel zu CSS Flexbox</li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Web_fonts">Web Fonts Tutorial</a>by
+                    MDN</li>
+                <li><a href="https://www.fontsquirrel.com/tools/webfont-generator">Webfont Generator</a></li>
+                <li><a href="https://abcdinamo.com/news/using-variable-fonts-on-the-web">Variable Fonts Tutorial</a> by Dinamo
+                </li>
+            </ul>
+        </section>
+    </main>
+    <script src="./script.js" type="text/javascript"></script>
+
+</body>
+
+</html>

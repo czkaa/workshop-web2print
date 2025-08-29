@@ -1,0 +1,102 @@
+ol {
+    padding: 1.5rem;
+}
+ol li {
+    width: 100%;
+    height: 50vh;
+    border: 2px solid var(--primary-color);
+    list-style-type: decimal;
+    margin-bottom: 3rem;
+    border-radius: 2px;
+    padding-left: 0;
+}
+
+.checkContainer {
+    margin-bottom: 3vh;
+}
+input[type=text] {
+    font-family: "Times Dot";
+    font-size: 1.5rem;
+    margin-top: 0.5rem
+}
+
+input[type=radio] {
+    border: 2px solid var(--primary-color);
+}
+
+textarea {
+    font-family: "Times Dot";
+    font-size: 1.5rem;
+    resize: none;
+    margin-top: 0.5rem;
+}
+
+
+#diagramme {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#diagramme ol {
+    width: 100%;
+    margin-top: 3rem;
+}
+#diagramme >  ol > li {
+    width: 100% !important;
+}
+
+input[type="submit"] {
+    font-size: 1rem;
+    padding: 0.2rem 0.4rem;
+    font-family: "Times Dot" !important;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+            color: var(--primary-color);
+            background-color: transparent;
+}
+
+textarea {
+    width: 80%;
+}
+
+input, textarea {
+    border: 2px solid var(--primary-color);
+    border-radius: 2px;
+    outline: none;
+}
+
+input:focus, textarea:focus {
+    border: 2px solid var(--primary-color);
+    border-radius: 2px;
+    outline: none;
+}
+
+@media print {
+
+    @page {
+        size: A4 portrait;
+    }
+
+    hr {
+        display: none;
+    }
+
+    body {
+        font-size: 9px;
+        padding-top: 1rem;
+    }
+
+    input[type="submit"] {
+        display: none;
+    }
+
+    li {
+        page-break-after: always;
+    }
+
+    #diagramme {
+        page-break-before: always;
+    }
+}

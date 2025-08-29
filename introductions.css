@@ -1,0 +1,173 @@
+
+body, h1, h2, h3 * {
+    font-family: Times Dot;
+    font-size: 1.75rem;
+}
+
+
+
+a {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+
+a:hover {
+    font-style: italic;
+}
+
+pre {
+    width: fit-content;
+    margin: 0;
+}
+
+p {
+    width: 100%;
+    margin: 1vh 0;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+pre {
+    width: 100%;
+}
+
+code {
+    letter-spacing: 0.1em;
+    background: yellow;
+    display: inline-block;
+    max-width: 100%;
+    font-size: 1.2rem;
+    overflow: hidden;
+    overflow-x: auto;
+    transform: translateY(0.25rem);
+    padding: 0.2rem 1rem;
+    color: rgb(39, 39, 39);
+    margin-bottom: 2vh;
+}
+
+code code {
+    background: w;
+}
+
+p > code {
+    margin-bottom: 0;
+}
+
+
+video, iframe {
+    margin: 3rem auto;
+    display: block;
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+figure {
+    width: 100%;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+
+figure ~ figure {
+    margin-top: 2vh;
+}
+
+img {
+    display: block;
+    margin: auto;
+    max-width: 60%;
+    margin-top: 1rem;
+}
+
+figcaption {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 0.25rem;
+    margin-bottom: 2rem;
+}
+
+
+
+
+td:has(pre) {
+    background-color: yellow;
+    text-align: left;
+}
+
+td:first-child {
+    font-family: monospace;
+    background-color: yellow;
+}
+
+
+
+th {
+    font-weight: normal;
+}
+
+/* ul li {
+    list-style-type: disc;
+}
+
+li {
+    padding-inline: 3vw;
+}
+
+li ul li {
+    list-style-type: circle;
+}
+
+li ul {
+    padding-inline: 3vw;
+} */
+
+ul {
+    text-align: left;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    list-style-type: disc;
+    width: 100%;
+}
+
+ul, ul li {
+    list-style-type: disc;
+}
+
+li {
+    position: relative;
+    display: list-item;
+}
+
+li > ul {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+li ul li {
+    list-style-type: circle;
+}
+
+
+.reset *, .reset {
+    font-family: sans-serif;
+}
+
+.reset h1 {
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.reset h2 {
+    font-size: 25px;
+    font-weight: bolder;
+    text-align: left;
+}
+
+.reset a {
+    text-decoration: underline;
+}

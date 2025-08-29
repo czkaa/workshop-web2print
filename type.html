@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="introductions.css">
+    <title>web typografie</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <p>Inhalt</p>
+            <ul>
+                <li><a href="#html">Text in <br>HTML</a></li>
+                <li><a href="#letter">Buchstabe</a></li>
+                <li><a href="#word">Wort</a></li>
+                <li><a href="#sentence">Satz</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="max-width: 70vw; margin: auto; gap: 1rem; display: flex; flex-direction: column; padding: 1rem">
+        <section id="intro">
+            <span style="font-family: 'Courier New', Courier, monospace;">W</span><span
+                style="font-family: cursive; font-style: italic;">e</span><span
+                style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">b</span>
+            <h3 style="letter-spacing: 1vw;">Typografie</h3>
+        </section>
+        <section id="html">
+            <h1>Text in HTML</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tag</th>
+                        <th>Beschreibung</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="2">Text container Elemente <code>block</code></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>&lt;p&gt;&lt;/p&gt;</pre>
+                        </td>
+                        <td>Text (paragraph)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>&lt;h1&gt;&lt;/h1&gt;</pre>
+                        </td>
+                        <td>Überschrift h1 - h6</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>&lt;blockquote&gt;&lt;/blockquote&gt;</pre>
+                        </td>
+                        <td>Zitat</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>&lt;pre&gt;&lt;/pre&gt;</pre>
+                        </td>
+                        <td>Preformatted Text (wird genau so gerendert wie im Text editor gesetzt)</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Text innere (styling) Elemente <code>inline</code></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>&lt;b&gt;&lt;b&gt;</pre>
+                        </td>
+                        <td>bold text</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>&lt;i&gt;&lt;i&gt;</pre>
+                        </td>
+                        <td>italic text</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>&lt;span&gt;&lt;span&gt;</pre>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>&lt;br&gt;</pre>
+                        </td>
+                        <td>Zeilenumbruch</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>&lt;sup&gt;&lt;sup&gt;</pre>
+                        </td>
+                        <td>hochgestellt (super)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>&lt;mark&gt;&lt;makr&gt;</pre>
+                        </td>
+                        <td>highlighted text</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="letter">
+            <h1>Buchstabe</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>aktion</th>
+                        <th>CSS property</th>
+                        <th>Beispiel</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Farbe</td>
+                        <td>color</td>
+                        <td>color: red;</td>
+                    </tr>
+                    <tr>
+                        <td>ändere Font</td>
+                        <td>font-family</td>
+                        <td>default fonts:
+                            <pre>font-family: serif;
+            sans-serif;
+            monospaced;
+            fantasy;
+            cursive;</pre>
+                            oder eine spezifische Font:
+                            <pre>font-family: "fontname";</pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>füge externe Font hinzu</td>
+                        <td>@font-face { }</td>
+                        <td>
+                            <pre>@fontface {
+    font-family: "fontname";
+    src: url("/fonts/file.woff2") format("woff2");
+}</pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Schriftgröße</td>
+                        <td>font-size</td>
+                        <td>
+                            <pre>font-size: 12px;
+           1vw;
+                        </pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Schriftstärke</td>
+                        <td>font-weight</td>
+                        <td>
+                            <pre>font-weight: bold;</pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Klein-/ Großbuchstaben</td>
+                        <td>text-transform</td>
+                        <td>
+                            <pre>text-transform: uppercase;</pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Text Schatten</td>
+                        <td>text-shadow (x-offset, y-offset, blur radius, farbe)</td>
+                        <td>
+                            <pre>text-shadow: 4px 4px 5px red;</pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Text Kontur</td>
+                        <td>text-stroke</td>
+                        <td>
+                            <pre>-webkit-text-stroke: 4px navy;
+                     text-stroke: 4px navy;</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Übung 1:</h2>
+            <p class="task">Öffne ein neues HTML Dokument und tippe einen Buchstaben. Benutze die bis hierhin
+                besprochenen HTML und CSS properties und überlege: welchen Charakter hat er? eher plakativ und laut?
+                oder zart, spitz oder schnell?</p>
+        </section>
+
+        <section id="word">
+            <h1>Wort</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>aktion</th>
+                        <th>CSS property</th>
+                        <th>Beispiel</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Text Ausrichtung</td>
+                        <td>text-align</td>
+                        <td>
+                            <pre>text-align: center;</pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Text Unterstreichung</td>
+                        <td>text-decoration</td>
+                        <td>
+                            <pre>text-decoration: underline;</pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Abstand von Unterstreichung zum Text</td>
+                        <td>text-underline-offset</td>
+                        <td>
+                            <pre>text-underline-offset: 1.5px;</pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Text Unterstreichung Stärke</td>
+                        <td>text-decoration-thickness</td>
+                        <td>
+                            <pre>text-decoration-thickness: 3px;</pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Buchstaben Abstand</td>
+                        <td>letter-spacing</td>
+                        <td>
+                            <pre>letter-spacing: 0.1vw</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>Übung 2:</h2>
+            <p class="task">In der nächsten Zeile: Bilde ein Wort mit dem von dir gewählten Buchstaben. Um das Wort zu
+                stylen kannst du wieder die hier genannten Eigenschaften verwenden.</p>
+        </section>
+
+        <section id="sentence">
+            <h1>Satz</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>aktion</th>
+                        <th>CSS property</th>
+                        <th>Beispiel</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Wort Abstand</td>
+                        <td>word-spacing</td>
+                        <td>
+                            <pre>word-spacing: 0.2vw;</pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Zeilen innerhalb Worte umbrechen</td>
+                        <td>word-break</td>
+                        <td>
+                            <pre>word-break: break-word;</pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Zeilen innerhalb von ALLEN Wörtern umbrechen</td>
+                        <td>overflow-wrap</td>
+                        <td>
+                            <pre>overflow-wrap: break-word;</pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Bindestriche</td>
+                        <td>hyphens</td>
+                        <td>
+                            <pre>hyphens: auto;</pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Textumbrüche</td>
+                        <td>text-wrap</td>
+                        <td>
+                            <pre>text-wrap: pretty;</pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>min Wortlänge für Trennung</td>
+                        <td>hyphenate-limit-chars</td>
+                        <td>
+                            <pre>hyphenate-limit-chars: 5;</pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Zeilenabstand</td>
+                        <td>line-height (wenn ohne unit: multipliziert font-size)</td>
+                        <td>
+                            <pre>line-height: 1.6;</pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Einrückung</td>
+                        <td>text-indent</td>
+                        <td>
+                            <pre>text-indent: 30px;</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>Übung 3:</h2>
+            <p class="task">In einer neuen Zeile, schreibe einen (oder mehrere) Satz mit dem verwendeten Wort. Überlege
+                wie sich der text verhalten soll (leserlich, unleserlich, formell, schüchtern...) und setze ihn mit den
+                hier genannten Eigenschaften.</p>
+        </section>
+    </main>
+</body>
+
+</html>
