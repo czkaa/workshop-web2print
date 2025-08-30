@@ -13,12 +13,35 @@
 
 @media print {
   body {
+    position: fixed;
     background-color: rgb(141, 127, 10);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
   }
   :root {
-      --primary-color: rgb(255, 134, 233);
-      --secondary-color: white;
+      --primary-color: rgb(141, 127, 10);
+      --secondary-color: rgb(255, 134, 233);
   }
+
+  h1 {
+    font-size: 4cm;
+    color: white;
+  }
+  @page {
+    size: A4 portrait;
+  }
+  section {
+    display: none;
+  }
+  nav, footer {
+    display: none;;
+  }
+  #homelink,
+  #printlink, #toplink {
+    display: none;;
+  }
+  
 }
 
 /* @font-face {

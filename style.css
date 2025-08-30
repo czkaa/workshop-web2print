@@ -3,6 +3,7 @@
 
 body {
   width: 100%;
+  max-width: 100vw;
   margin: 0;
   font-family: "Times Dot";
   color: var(--primary-color);
@@ -240,7 +241,7 @@ label:has(> #something_else:checked)+#other-field {
   height: 4.5rem;
 }
 
-#homelink {
+#homelink, #printlink {
   position: fixed;
   top: 0;
   left: 12.3rem;
@@ -249,9 +250,12 @@ label:has(> #something_else:checked)+#other-field {
   align-items: center;
   aspect-ratio: 1;
   border: 3px dotted var(--primary-color);
-
+  color: var(--secondary-color);
   border-radius: 100%;
   font-size: 1.2rem;
+  z-index: 10;
+  background: none;
+  cursor: pointer;
 }
 
 .task {
