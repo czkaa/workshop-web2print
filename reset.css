@@ -10,6 +10,17 @@
   --text-base: 20px;
 }
 
+
+@media print {
+  body {
+    background-color: rgb(141, 127, 10);
+  }
+  :root {
+      --primary-color: rgb(255, 134, 233);
+      --secondary-color: white;
+  }
+}
+
 /* @font-face {
   font-family: "Times Dot";
   font-style: normal;

@@ -36,7 +36,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: white;
   z-index: 0;
 }
 
